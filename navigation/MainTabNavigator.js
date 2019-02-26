@@ -3,10 +3,18 @@ import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
+import FeedScreen from '../screens/FeedScreen';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+
+const FeedStack = createStackNavigator({
+  Feed: FeedScreen,
+})
+
+FeedStack.navigationOptions = {
+  tabBarLabel: 'Feed',
+}
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -22,20 +30,6 @@ HomeStack.navigationOptions = {
           ? `ios-information-circle${focused ? '' : '-outline'}`
           : 'md-information-circle'
       }
-    />
-  ),
-};
-
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
-});
-
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
     />
   ),
 };
@@ -63,8 +57,8 @@ ProfileStack.navigationOptions = {
 };
 
 export default createBottomTabNavigator({
+  FeedStack,
   HomeStack,
-  LinksStack,
   SettingsStack,
   ProfileStack,
 });
