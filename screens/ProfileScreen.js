@@ -18,6 +18,7 @@ export default class ProfileScreen extends React.Component {
         return (
             <View style={styles.bioContainter}>
                 <Text style={styles.bioText}>Bio: My name is Noah and I can bench 250lb.</Text>
+                <Text style={styles.bioText}>Kebin was here.</Text>
             </View>
         )
     }

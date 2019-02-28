@@ -24,6 +24,6 @@ export default class FeedScreen extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'cornflowerblue',
+        backgroundColor: 'crimson',
     },
 });
